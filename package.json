@@ -1,0 +1,40 @@
+{
+  "name": "react-navbar",
+  "version": "0.1.0",
+  "description": "React.js component rendering a translatable menu bar with Twitter Bootstrap navbar HTML markup",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "gulp coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikr/react-navbar.git"
+  },
+  "keywords": [
+    "reactjs",
+    "component",
+    "react-component",
+    "html",
+    "browser",
+    "control",
+    "widget",
+    "twitter-bootstrap",
+    "menu",
+    "navigation",
+    "nav",
+    "navbar",
+    "hamburger",
+    "i18n",
+    "intl",
+    "internationalization",
+    "translatable",
+    "react-intl",
+    "responsive"
+  ],
+  "author": "Ivan Krechetov <ikr@ikr.su>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ikr/react-navbar/issues"
+  },
+  "homepage": "https://github.com/ikr/react-navbar#readme"
+}
