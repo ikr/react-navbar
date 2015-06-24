@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ikr/react-navbar.svg?branch=master)](https://travis-ci.org/ikr/react-navbar)
+
 # Overview
 
 React.js component rendering a translatable menu bar with Twitter Bootstrap
