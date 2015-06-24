@@ -70,9 +70,7 @@ React.render(
 );
 ```
 
-# Details
-
-## Internationalization
+# Internationalization
 
 Navbar is [react-intl](https://github.com/yahoo/react-intl)-based. To translate the component, make
 sure it receives the `messages` property. The i18n message paths are the values of `title`-s of
