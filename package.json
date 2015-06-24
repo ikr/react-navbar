@@ -4,7 +4,12 @@
   "description": "React.js component rendering a translatable menu bar with Twitter Bootstrap Navbar HTML markup",
   "main": "build/index.js",
   "scripts": {
-    "test": "gulp coverage"
+    "clean": "rm -rf ./build/src ./build/tests ./build/index.js",
+    "test": "gulp coverage",
+    "build": "gulp build",
+    "tdd": "gulp",
+    "lint": "gulp lint",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -36,5 +41,21 @@
   "bugs": {
     "url": "https://github.com/ikr/react-navbar/issues"
   },
-  "homepage": "https://github.com/ikr/react-navbar#readme"
+  "homepage": "https://github.com/ikr/react-navbar#readme",
+  "dependencies": {
+    "react": "^0.13.3",
+    "react-intl": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel": "^5.6.4",
+    "eslint": "^0.23.0",
+    "eslint-plugin-react": "^2.5.2",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-eslint": "^0.14.0",
+    "gulp-istanbul": "^0.10.0",
+    "gulp-mocha": "^2.1.2",
+    "intl": "^0.1.4",
+    "jsdom-test-browser": "^3.0.0"
+  }
 }
