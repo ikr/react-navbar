@@ -1,4 +1,4 @@
-# About
+# Overview
 
 React.js component rendering a translatable menu bar with Twitter Bootstrap
 [Navbar](http://getbootstrap.com/components/#navbar) HTML markup. For example, for a menu structure
@@ -22,7 +22,7 @@ like the that:
 
 one would have to initialize a `Navbar` component instance in the following way:
 
-```JavaScript
+```js
 import React from 'react';
 import Navbar from 'react-navbar';
 
@@ -68,4 +68,25 @@ React.render(
 
     global.document.body
 );
+```
+
+# Details
+
+## Internationalization
+
+Navbar is [react-intl](https://github.com/yahoo/react-intl)-based. To translate the component,
+please pass the `messages` property. The messages are referenced from the `title`-s of `menuItems`
+and `secondaryMenuItems`.
+
+`react-intl` allows using `react-navbar` uniformly in bigger applications, and passing all the
+namespaced translations, from the root, down the React components hierarchy, -- automatically, with
+the help of `IntlMixin`.
+
+Please note, that `react-intl` depends on the global `Intl` object. You can polyfill it with
+[intl](https://github.com/andyearnshaw/Intl.js) package:
+
+```js
+if (!global.Intl) {
+    require('intl');
+}
 ```
