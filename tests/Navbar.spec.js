@@ -3,8 +3,13 @@ import React from 'react';
 import {addons} from 'react/addons';
 import massert from './massert';
 import Navbar from '../src/Navbar';
+import MenuItems from '../src/MenuItems';
 
 const TestUtils = addons.TestUtils;
+
+// function item() {
+//     return {title: 'menu.item', href: '/action'};
+// }
 
 describe('Navbar', () => {
     it('is a function', () => {
@@ -12,10 +17,12 @@ describe('Navbar', () => {
     });
 
     describe('HTML', () => {
+        let component;
         let element;
 
         beforeEach(() => {
-            element = TestUtils.renderIntoDocument(React.createElement(Navbar)).getDOMNode();
+            component = TestUtils.renderIntoDocument(React.createElement(Navbar));
+            element = component.getDOMNode();
         });
 
         it('is a <nav> tag', () => {
@@ -76,6 +83,19 @@ describe('Navbar', () => {
             it('has the toggle target ID assigned', () => {
                 assert.strictEqual(
                     containerElement.getAttribute('id'), 'react-navbar-collapse-all');
+            });
+        });
+
+        describe('main menu items component instance', () => {
+            it('gets the reference assigned', () => {
+                assert.strictEqual(
+                    element.querySelector('.navbar-nav').getAttribute('data-reactid'),
+                    component.refs.menuItems.getDOMNode().getAttribute('data-reactid')
+                );
+            });
+
+            it('is an instance of MenuItems', () => {
+                assert(TestUtils.isCompositeComponentWithType(component.refs.menuItems, MenuItems));
             });
         });
     });

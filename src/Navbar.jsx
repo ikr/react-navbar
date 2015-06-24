@@ -1,4 +1,5 @@
 import React from 'react';
+import MenuItems from './MenuItems';
 
 export default React.createClass({
     render() {
@@ -13,6 +14,7 @@ export default React.createClass({
                 </div>
 
                 <div className="collapse navbar-collapse" id="react-navbar-collapse-all">
+                    <MenuItems ref="menuItems"/>
                 </div>
             </div>
         </nav>;
