@@ -8,6 +8,17 @@ export default React.createClass({
     },
 
     render() {
+        const secondaryMenuItems = (
+            this.props.secondaryMenuItems ?
+
+            <MenuItems
+                ref="secondaryMenuItems"
+                secondary={true}
+                items={this.props.secondaryMenuItems}/> :
+
+            null
+        );
+
         return <nav className="navbar navbar-default">
             <div className="container-fluid">
                 <div className="navbar-header">
@@ -20,11 +31,7 @@ export default React.createClass({
 
                 <div className="collapse navbar-collapse" id="react-navbar-collapse-all">
                     <MenuItems ref="menuItems" items={this.props.menuItems}/>
-
-                    <MenuItems
-                        ref="secondaryMenuItems"
-                        secondary={true}
-                        items={this.props.secondaryMenuItems}/>
+                    {secondaryMenuItems}
                 </div>
             </div>
         </nav>;

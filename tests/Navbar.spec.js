@@ -138,4 +138,18 @@ describe('Navbar', () => {
             });
         });
     });
+
+    describe('HTML without the secondary menu items', () => {
+        let component;
+
+        beforeEach(() => {
+            component = TestUtils.renderIntoDocument(React.createElement(Navbar, {
+                menuItems: [item()]
+            }));
+        });
+
+        it('displays no secondary MenuItems instance', () => {
+            assert(!component.refs.secondaryMenuItems);
+        });
+    });
 });
