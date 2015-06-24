@@ -49,7 +49,6 @@ const secondaryMenuItems = [{
 
 {title: 'menu.i3', href: '/resource-3'}];
 
-
 const localeSpecificIcuMessagesForTheWholeAppCompiledOnTheServer = {
     menu: {
         dd1: 'Drop-down-1', i11: 'Item-1-1', i12: 'Item-1-2',
