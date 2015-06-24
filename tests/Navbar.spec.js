@@ -57,5 +57,26 @@ describe('Navbar', () => {
                     buttonElement.getAttribute('data-target'), '#react-navbar-collapse-all');
             });
         });
+
+        describe('the collapse-able container of menu items', () => {
+            let containerElement;
+
+            beforeEach(() => {
+                containerElement = element.querySelector('div.container-fluid > div.collapse');
+            });
+
+            it('is displayed', () => {
+                assert(containerElement);
+            });
+
+            it('additionally has the navbar-collapse CSS class assigned', () => {
+                massert.cssClass(containerElement, 'navbar-collapse');
+            });
+
+            it('has the toggle target ID assigned', () => {
+                assert.strictEqual(
+                    containerElement.getAttribute('id'), 'react-navbar-collapse-all');
+            });
+        });
     });
 });

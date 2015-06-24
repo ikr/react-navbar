@@ -11,6 +11,9 @@ export default React.createClass({
                         <span className="icon-bar"></span>
                     </button>
                 </div>
+
+                <div className="collapse navbar-collapse" id="react-navbar-collapse-all">
+                </div>
             </div>
         </nav>;
     }
