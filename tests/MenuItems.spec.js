@@ -11,11 +11,17 @@ describe('MenuItems', () => {
         assert.strictEqual(typeof MenuItems, 'function');
     });
 
+    it('declares a required "items" array property', () => {
+        assert.strictEqual(MenuItems.propTypes.items, React.PropTypes.array.isRequired);
+    });
+
     describe('HTML', () => {
         let element;
 
         beforeEach(() => {
-            element = TestUtils.renderIntoDocument(React.createElement(MenuItems)).getDOMNode();
+            element = TestUtils.renderIntoDocument(React.createElement(MenuItems, {
+                items: []
+            })).getDOMNode();
         });
 
         it('is a <ul>', () => {

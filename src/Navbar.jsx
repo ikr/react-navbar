@@ -2,6 +2,10 @@ import React from 'react';
 import MenuItems from './MenuItems';
 
 export default React.createClass({
+    propTypes: {
+        menuItems: React.PropTypes.array.isRequired
+    },
+
     render() {
         return <nav className="navbar navbar-default">
             <div className="container-fluid">
@@ -14,7 +18,7 @@ export default React.createClass({
                 </div>
 
                 <div className="collapse navbar-collapse" id="react-navbar-collapse-all">
-                    <MenuItems ref="menuItems"/>
+                    <MenuItems ref="menuItems" items={this.props.menuItems}/>
                 </div>
             </div>
         </nav>;

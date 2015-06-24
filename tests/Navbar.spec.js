@@ -7,13 +7,17 @@ import MenuItems from '../src/MenuItems';
 
 const TestUtils = addons.TestUtils;
 
-// function item() {
-//     return {title: 'menu.item', href: '/action'};
-// }
+function item() {
+    return {title: 'menu.item', href: '/action'};
+}
 
 describe('Navbar', () => {
     it('is a function', () => {
         assert.strictEqual(typeof Navbar, 'function');
+    });
+
+    it('declares a required menuItems array property', () => {
+        assert.strictEqual(Navbar.propTypes.menuItems, React.PropTypes.array.isRequired);
     });
 
     describe('HTML', () => {
@@ -21,7 +25,10 @@ describe('Navbar', () => {
         let element;
 
         beforeEach(() => {
-            component = TestUtils.renderIntoDocument(React.createElement(Navbar));
+            component = TestUtils.renderIntoDocument(React.createElement(Navbar, {
+                menuItems: [item()]
+            }));
+
             element = component.getDOMNode();
         });
 
@@ -96,6 +103,10 @@ describe('Navbar', () => {
 
             it('is an instance of MenuItems', () => {
                 assert(TestUtils.isCompositeComponentWithType(component.refs.menuItems, MenuItems));
+            });
+
+            it('gets the menuItems property of the parent named just "items"', () => {
+                assert.deepEqual(component.refs.menuItems.props.items, component.props.menuItems);
             });
         });
     });
