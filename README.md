@@ -23,30 +23,32 @@ like the that:
 one would have to initialize a `Navbar` component instance in the following way:
 
 ```JavaScript
-const props = {
-    menuItems: [{
-        title: 'menu.dd1',
+import React from 'react';
+import Navbar from 'react-navbar';
 
-        items: [
-            {title: 'menu.i11', href: '/resource-1-1'},
-            {title: 'menu.i12', href: '/resource-1-2'}
-        ]
-    },
+const menuItems = [{
+    title: 'menu.dd1',
 
-    {title: 'menu.i1', href: '/resource-1'},
-    {title: 'menu.i2', href: '/resource-2'}],
+    items: [
+        {title: 'menu.i11', href: '/resource-1-1'},
+        {title: 'menu.i12', href: '/resource-1-2'}
+    ]
+},
 
-    secondaryMenuItems: [{
-        title: 'menu.dd2',
+{title: 'menu.i1', href: '/resource-1'},
+{title: 'menu.i2', href: '/resource-2'}];
 
-        items: [
-            {title: 'menu.i21', href: '/resource-2-1'},
-            {title: 'menu.i22', href: '/resource-2-2'}
-        ]
-    },
+const secondaryMenuItems = [{
+    title: 'menu.dd2',
 
-    {title: 'menu.i3', href: '/resource-3'}]
-};
+    items: [
+        {title: 'menu.i21', href: '/resource-2-1'},
+        {title: 'menu.i22', href: '/resource-2-2'}
+    ]
+},
+
+{title: 'menu.i3', href: '/resource-3'}];
+
 
 const localeSpecificIcuMessagesForTheWholeAppCompiledOnTheServer = {
     menu: {
@@ -59,4 +61,14 @@ const localeSpecificIcuMessagesForTheWholeAppCompiledOnTheServer = {
     footer: {...},
     ...
 };
+
+React.render(
+    React.createElement(Navbar, {
+        menuItems,
+        secondaryMenuItems,
+        messages: localeSpecificIcuMessagesForTheWholeAppCompiledOnTheServer
+    }),
+
+    global.document.body
+);
 ```
