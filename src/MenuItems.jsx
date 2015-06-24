@@ -8,7 +8,11 @@ export default React.createClass({
     },
 
     render() {
-        const className = classNames('nav navbar-nav', {'navbar-right': this.props.secondary});
+        const className = classNames(
+            'nav navbar-nav',
+            {'navbar-right': this.props.secondary}
+        );
+
         return <ul className={className}></ul>;
     }
 });

@@ -20,7 +20,11 @@ export default React.createClass({
 
                 <div className="collapse navbar-collapse" id="react-navbar-collapse-all">
                     <MenuItems ref="menuItems" items={this.props.menuItems}/>
-                    <MenuItems ref="secondaryMenuItems" secondary={true} items={[]}/>
+
+                    <MenuItems
+                        ref="secondaryMenuItems"
+                        secondary={true}
+                        items={this.props.secondaryMenuItems}/>
                 </div>
             </div>
         </nav>;

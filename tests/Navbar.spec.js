@@ -129,6 +129,13 @@ describe('Navbar', () => {
                     MenuItems
                 ));
             });
+
+            it('gets the secondaryMenuItems property of the parent named just "items"', () => {
+                assert.deepEqual(
+                    component.refs.secondaryMenuItems.props.items,
+                    component.props.secondaryMenuItems
+                );
+            });
         });
     });
 });
