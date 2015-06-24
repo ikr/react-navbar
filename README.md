@@ -50,7 +50,7 @@ const secondaryMenuItems = [{
 const localeSpecificIcuMessagesForTheWholeAppCompiledOnTheServer = {
     menu: {
         dd1: 'Drop-down-1', i11: 'Item-1-1', i12: 'Item-1-2',
-        i1: 'Item-1', i2: 'Item-2', i3: 'Item-3',
+         i1: 'Item-1',       i2: 'Item-2',    i3: 'Item-3',
         dd2: 'Drop-down-2', i21: 'Item-2-1', i22: 'Item-2-2'
     },
 
