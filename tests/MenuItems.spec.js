@@ -15,6 +15,10 @@ describe('MenuItems', () => {
         assert.strictEqual(MenuItems.propTypes.items, React.PropTypes.array.isRequired);
     });
 
+    it('declares an optional "secondary" bool property', () => {
+        assert.strictEqual(MenuItems.propTypes.secondary, React.PropTypes.bool);
+    });
+
     describe('HTML', () => {
         let element;
 
@@ -34,6 +38,25 @@ describe('MenuItems', () => {
 
         it('has the top-level CSS class navbar-nav assigned', () => {
             massert.cssClass(element, 'navbar-nav');
+        });
+
+        it('has no top-level CSS class navbar-righ assigned', () => {
+            massert.noCssClass(element, 'navbar-right');
+        });
+    });
+
+    describe('HTML for "secondary" case', () => {
+        let element;
+
+        beforeEach(() => {
+            element = TestUtils.renderIntoDocument(React.createElement(MenuItems, {
+                items: [],
+                secondary: true
+            })).getDOMNode();
+        });
+
+        it('has the top-level CSS class navbar-righ assigned', () => {
+            massert.cssClass(element, 'navbar-right');
         });
     });
 });

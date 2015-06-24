@@ -20,13 +20,18 @@ describe('Navbar', () => {
         assert.strictEqual(Navbar.propTypes.menuItems, React.PropTypes.array.isRequired);
     });
 
+    it('declares an optional secondaryMenuItems array property', () => {
+        assert.strictEqual(Navbar.propTypes.secondaryMenuItems, React.PropTypes.array);
+    });
+
     describe('HTML', () => {
         let component;
         let element;
 
         beforeEach(() => {
             component = TestUtils.renderIntoDocument(React.createElement(Navbar, {
-                menuItems: [item()]
+                menuItems: [item(), item()],
+                secondaryMenuItems: [item()]
             }));
 
             element = component.getDOMNode();
@@ -94,7 +99,7 @@ describe('Navbar', () => {
         });
 
         describe('main menu items component instance', () => {
-            it('gets the reference assigned', () => {
+            it('gets a reference assigned', () => {
                 assert.strictEqual(
                     element.querySelector('.navbar-nav').getAttribute('data-reactid'),
                     component.refs.menuItems.getDOMNode().getAttribute('data-reactid')
@@ -107,6 +112,22 @@ describe('Navbar', () => {
 
             it('gets the menuItems property of the parent named just "items"', () => {
                 assert.deepEqual(component.refs.menuItems.props.items, component.props.menuItems);
+            });
+        });
+
+        describe('secondary menu items component instance', () => {
+            it('gets a reference assigned', () => {
+                assert.strictEqual(
+                    element.querySelector('.navbar-right').getAttribute('data-reactid'),
+                    component.refs.secondaryMenuItems.getDOMNode().getAttribute('data-reactid')
+                );
+            });
+
+            it('is an instance of MenuItems', () => {
+                assert(TestUtils.isCompositeComponentWithType(
+                    component.refs.secondaryMenuItems,
+                    MenuItems
+                ));
             });
         });
     });

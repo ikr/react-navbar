@@ -3,7 +3,8 @@ import MenuItems from './MenuItems';
 
 export default React.createClass({
     propTypes: {
-        menuItems: React.PropTypes.array.isRequired
+        menuItems: React.PropTypes.array.isRequired,
+        secondaryMenuItems: React.PropTypes.array
     },
 
     render() {
@@ -19,6 +20,7 @@ export default React.createClass({
 
                 <div className="collapse navbar-collapse" id="react-navbar-collapse-all">
                     <MenuItems ref="menuItems" items={this.props.menuItems}/>
+                    <MenuItems ref="secondaryMenuItems" secondary={true} items={[]}/>
                 </div>
             </div>
         </nav>;
