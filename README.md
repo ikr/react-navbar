@@ -34,7 +34,6 @@ const menuItems = [{
         {title: 'menu.i12', href: '/resource-1-2'}
     ]
 },
-
 {title: 'menu.i1', href: '/resource-1'},
 {title: 'menu.i2', href: '/resource-2'}];
 
@@ -46,7 +45,6 @@ const secondaryMenuItems = [{
         {title: 'menu.i22', href: '/resource-2-2'}
     ]
 },
-
 {title: 'menu.i3', href: '/resource-3'}];
 
 const localeSpecificIcuMessagesForTheWholeAppCompiledOnTheServer = {
