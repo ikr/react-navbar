@@ -1,7 +1,8 @@
 # About
 
-React.js component rendering a translatable menu bar with Twitter Bootstrap navbar HTML markup. For
-example, for a menu structure like the that:
+React.js component rendering a translatable menu bar with Twitter Bootstrap
+[Navbar](http://getbootstrap.com/components/#navbar) HTML markup. For example, for a menu structure
+like the that:
 
 ```
 +-------------+--------+--------+---------------+-------------+--------+
