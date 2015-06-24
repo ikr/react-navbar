@@ -1,7 +1,7 @@
 {
   "name": "react-navbar",
   "version": "0.1.0",
-  "description": "React.js component rendering a translatable menu bar with Twitter Bootstrap navbar HTML markup",
+  "description": "React.js component rendering a translatable menu bar with Twitter Bootstrap Navbar HTML markup",
   "main": "build/index.js",
   "scripts": {
     "test": "gulp coverage"
