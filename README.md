@@ -72,6 +72,8 @@ React.render(
 );
 ```
 
+The `secondaryMenuItems` are optional.
+
 # Internationalization
 
 Navbar is [react-intl](https://github.com/yahoo/react-intl)-based. To translate the component, make
