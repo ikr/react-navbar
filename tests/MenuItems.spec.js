@@ -3,6 +3,8 @@ import React from 'react';
 import {addons} from 'react/addons';
 import massert from './massert';
 import MenuItems from '../src/MenuItems';
+import Item from '../src/Item';
+import Dropdown from '../src/Dropdown';
 
 const TestUtils = addons.TestUtils;
 
@@ -20,12 +22,29 @@ describe('MenuItems', () => {
     });
 
     describe('HTML', () => {
+        let component;
         let element;
 
         beforeEach(() => {
-            element = TestUtils.renderIntoDocument(React.createElement(MenuItems, {
-                items: []
-            })).getDOMNode();
+            component = TestUtils.renderIntoDocument(React.createElement(MenuItems, {
+                items: [
+                    {title: 'reboot', href: '/do?ac=reboot'},
+                    {title: 'sleep', href: '/do?ac=sleep'},
+
+                    {title: 'more', items: [
+                        {title: 'shutDown', href: '/do?ac=shutDown'}
+                    ]}
+                ],
+
+                messages: {
+                    reboot: 'Перезагрузить',
+                    sleep: 'Усыпить',
+                    more: 'Дополнительно',
+                    shutDown: 'Выключить'
+                }
+            }));
+
+            element = component.getDOMNode();
         });
 
         it('is a <ul>', () => {
@@ -42,6 +61,14 @@ describe('MenuItems', () => {
 
         it('has no top-level CSS class navbar-righ assigned', () => {
             massert.noCssClass(element, 'navbar-right');
+        });
+
+        it('nests an Item', () => {
+            assert(TestUtils.isCompositeComponentWithType(component.refs.i0, Item));
+        });
+
+        it('nests a Dropdown', () => {
+            assert(TestUtils.isCompositeComponentWithType(component.refs.i2, Dropdown));
         });
     });
 

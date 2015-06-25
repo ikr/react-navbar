@@ -11,6 +11,10 @@ function item() {
     return {title: 'menu.item', href: '/action'};
 }
 
+function messages() {
+    return {menu: {item: 'Штучка'}};
+}
+
 describe('Navbar', () => {
     it('is a function', () => {
         assert.strictEqual(typeof Navbar, 'function');
@@ -31,7 +35,8 @@ describe('Navbar', () => {
         beforeEach(() => {
             component = TestUtils.renderIntoDocument(React.createElement(Navbar, {
                 menuItems: [item(), item()],
-                secondaryMenuItems: [item()]
+                secondaryMenuItems: [item()],
+                messages: messages()
             }));
 
             element = component.getDOMNode();
@@ -144,7 +149,8 @@ describe('Navbar', () => {
 
         beforeEach(() => {
             component = TestUtils.renderIntoDocument(React.createElement(Navbar, {
-                menuItems: [item()]
+                menuItems: [item()],
+                messages: messages()
             }));
         });
 

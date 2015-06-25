@@ -1,4 +1,5 @@
 import React from 'react';
+import {IntlMixin} from 'react-intl';
 import MenuItems from './MenuItems';
 
 export default React.createClass({
@@ -6,6 +7,8 @@ export default React.createClass({
         menuItems: React.PropTypes.array.isRequired,
         secondaryMenuItems: React.PropTypes.array
     },
+
+    mixins: [IntlMixin],
 
     render() {
         const secondaryMenuItems = (
