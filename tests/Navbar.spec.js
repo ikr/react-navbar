@@ -56,16 +56,13 @@ describe('Navbar', () => {
             });
         });
 
-        it('has fluid-container div as an immediate descendant', () => {
-            assert.strictEqual(
-                element.querySelector('div.container-fluid').parentElement,
-                element
-            );
+        it('has container div as an immediate descendant', () => {
+            assert.strictEqual(element.querySelector('div.container').parentElement, element);
         });
 
         it('displays the responsive hamburger header', () => {
             assert.strictEqual(element.querySelectorAll(
-                '.container-fluid > .navbar-header > button.navbar-toggle > span.icon-bar'
+                '.container > .navbar-header > button.navbar-toggle > span.icon-bar'
             ).length, 3);
         });
 
@@ -86,7 +83,7 @@ describe('Navbar', () => {
             let containerElement;
 
             beforeEach(() => {
-                containerElement = element.querySelector('div.container-fluid > div.collapse');
+                containerElement = element.querySelector('div.container > div.collapse');
             });
 
             it('is displayed', () => {
