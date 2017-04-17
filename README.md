@@ -26,7 +26,7 @@ one would have to initialize a `Navbar` component instance in the following way:
 
 ```js
 import React from 'react';
-import Navbar from 'react-navbar';
+import {Navbar} from 'react-navbar';
 
 const menuItems = [{
     title: 'menu.dd1',
