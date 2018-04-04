@@ -8,10 +8,6 @@ export default React.createClass({
         target: React.PropTypes.string
     },
 
-    defaultProps: {
-        target: '_self'
-    },
-
     mixins: [IntlMixin],
 
     render() {
