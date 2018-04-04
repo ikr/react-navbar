@@ -4,15 +4,23 @@ import {IntlMixin} from 'react-intl';
 export default React.createClass({
     propTypes: {
         title: React.PropTypes.string.isRequired,
-        href: React.PropTypes.string.isRequired
+        href: React.PropTypes.string.isRequired,
+        target: React.PropTypes.string
     },
 
     mixins: [IntlMixin],
 
     render() {
+        const {href, target, title} = this.props;
+
+        const anchorProps = Object.assign(
+            {href},
+            target ? {target} : {}
+        );
+
         return <li>
-            <a href={this.props.href}>
-                {this.getIntlMessage(this.props.title)}
+            <a {...anchorProps}>
+                {this.getIntlMessage(title)}
             </a>
         </li>;
     }

@@ -25,6 +25,7 @@ describe('Item', () => {
             element = TestUtils.renderIntoDocument(React.createElement(Item, {
                 title: 'menu.nunu',
                 href: '#/actions/nunu',
+                target: '_target',
 
                 messages: {
                     menu: {nunu: 'Nü-nü'}
@@ -49,6 +50,10 @@ describe('Item', () => {
 
             it('has the href attribute set to the href prop value', () => {
                 assert.strictEqual(aElement.getAttribute('href'), '#/actions/nunu');
+            });
+
+            it('has the target attribute set to the target prop value', () => {
+                assert.strictEqual(aElement.getAttribute('target'), '_target');
             });
 
             it('nests the localized title prop as the inner text', () => {
