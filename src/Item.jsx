@@ -15,9 +15,16 @@ export default React.createClass({
     mixins: [IntlMixin],
 
     render() {
+        const {href, target, title} = this.props;
+
+        const anchorProps = Object.assign(
+            {href},
+            target ? {target} : {}
+        );
+
         return <li>
-            <a href={this.props.href} target={this.props.target}>
-                {this.getIntlMessage(this.props.title)}
+            <a {...anchorProps}>
+                {this.getIntlMessage(title)}
             </a>
         </li>;
     }
