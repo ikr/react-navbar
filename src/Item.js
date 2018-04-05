@@ -1,5 +1,5 @@
-import React from 'react';
-import {IntlMixin} from 'react-intl';
+import React from 'react'
+import {IntlMixin} from 'react-intl'
 
 export default React.createClass({
     propTypes: {
@@ -10,18 +10,18 @@ export default React.createClass({
 
     mixins: [IntlMixin],
 
-    render() {
-        const {href, target, title} = this.props;
+    render () {
+        const {href, target, title} = this.props
 
         const anchorProps = Object.assign(
             {href},
             target ? {target} : {}
-        );
+        )
 
         return <li>
             <a {...anchorProps}>
                 {this.getIntlMessage(title)}
             </a>
-        </li>;
+        </li>
     }
-});
+})

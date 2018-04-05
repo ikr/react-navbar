@@ -1,0 +1,18 @@
+extends:
+  - standard
+  - plugin:react/recommended
+plugins:
+  - react
+rules:
+  indent:
+    - error
+    - 4
+  react/no-deprecated: 0
+  react/no-string-refs: 0
+globals:
+  global: true
+  describe: true
+  it: true
+  beforeEach: true
+  before: true
+  after: true

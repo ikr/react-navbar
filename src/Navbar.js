@@ -1,6 +1,6 @@
-import React from 'react';
-import {IntlMixin} from 'react-intl';
-import MenuItems from './MenuItems';
+import React from 'react'
+import {IntlMixin} from 'react-intl'
+import MenuItems from './MenuItems'
 
 export default React.createClass({
     propTypes: {
@@ -10,17 +10,17 @@ export default React.createClass({
 
     mixins: [IntlMixin],
 
-    render() {
+    render () {
         const secondaryMenuItems = (
-            this.props.secondaryMenuItems ?
+            this.props.secondaryMenuItems
 
-            <MenuItems
-                ref="secondaryMenuItems"
-                secondary={true}
-                items={this.props.secondaryMenuItems}/> :
+                ? <MenuItems
+                    ref="secondaryMenuItems"
+                    secondary={true}
+                    items={this.props.secondaryMenuItems}/>
 
-            null
-        );
+                : null
+        )
 
         return <nav className="navbar navbar-default">
             <div className="container">
@@ -38,6 +38,6 @@ export default React.createClass({
                     {secondaryMenuItems}
                 </div>
             </div>
-        </nav>;
+        </nav>
     }
-});
+})
