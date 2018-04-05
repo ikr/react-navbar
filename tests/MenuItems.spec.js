@@ -1,7 +1,7 @@
 import assert from 'assert'
 import React from 'react'
 import {addons} from 'react/addons'
-import massert from './massert'
+import * as massert from './helpers/massert'
 import MenuItems from '../src/MenuItems'
 import Item from '../src/Item'
 import Dropdown from '../src/Dropdown'
