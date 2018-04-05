@@ -32,7 +32,7 @@ const menuItems = [{
     title: 'menu.dd1',
 
     items: [
-        {title: 'menu.i11', href: '/resource-1-1'},
+        {title: 'menu.i11', href: '/resource-1-1', target: '_blank'},
         {title: 'menu.i12', href: '/resource-1-2'}
     ]
 },
