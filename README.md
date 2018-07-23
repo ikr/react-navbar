@@ -84,5 +84,5 @@ Navbar is [react-intl](https://github.com/yahoo/react-intl)-based. The i18n mess
 values of `title`-s of `menuItems` and `secondaryMenuItems`.
 
 `react-intl` foundation allows using `react-navbar` uniformly in bigger applications, and passing
-all the translations, from the root, down the React components hierarchy, -- automatically, with the
+all the translations, from the root, down the React components hierarchy, — automatically, with the
 help of the `IntlProvider`.
