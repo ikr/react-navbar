@@ -21,4 +21,4 @@ export interface Props {
     items: MenuItem[]
 }
 
-type MenuItem = ItemProps | DropdownProps
+export type MenuItem = ItemProps | DropdownProps
