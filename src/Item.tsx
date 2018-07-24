@@ -14,6 +14,7 @@ export default function Item(props: Props) {
 }
 
 export interface Props {
+    kind: 'item',
     href: string,
     target?: string,
     title: string

@@ -25,6 +25,7 @@ export default function Dropdown(props: Props) {
 }
 
 export interface Props {
+    kind: 'dropdown',
     title: string,
     items: ItemProps[]
 }

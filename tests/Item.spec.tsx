@@ -10,6 +10,7 @@ function messages(): { [id: string]: string } {
 
 function props(): Props {
     return {
+        kind: 'item',
         title: 'menu.nunu',
         href: '#/actions/nunu',
         target: '_target'

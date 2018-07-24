@@ -6,11 +6,12 @@ import Dropdown, { Props } from '../src/Dropdown'
 
 function props(): Props {
     return {
+        kind: 'dropdown',
         title: 'leMenu.root.dd1Title',
 
         items: [
-            { title: 'leMenu.root.dd1.i1', href: '/action-1' },
-            { title: 'leMenu.root.dd1.i2', href: '/action-2' }
+            { kind: 'item', title: 'leMenu.root.dd1.i1', href: '/action-1' },
+            { kind: 'item', title: 'leMenu.root.dd1.i2', href: '/action-2' }
         ]
     }
 }

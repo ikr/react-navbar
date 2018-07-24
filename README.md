@@ -31,22 +31,24 @@ import {IntlProvider} from 'react-intl'
 import * as Navbar from 'react-navbar'
 
 const menuItems = [{
+    kind: 'dropdown',
     title: 'menu.dd1',
 
     items: [
-        {title: 'menu.i11', href: '/resource-1-1', target: '_blank'},
-        {title: 'menu.i12', href: '/resource-1-2'}
+        {kind: 'item', title: 'menu.i11', href: '/resource-1-1', target: '_blank'},
+        {kind: 'item', title: 'menu.i12', href: '/resource-1-2'}
     ]
 },
-{title: 'menu.i1', href: '/resource-1'},
-{title: 'menu.i2', href: '/resource-2'}]
+{kind: 'item', title: 'menu.i1', href: '/resource-1'},
+{kind: 'item', title: 'menu.i2', href: '/resource-2'}]
 
 const secondaryMenuItems = [{
+    kind: 'dropdown',
     title: 'menu.dd2',
 
     items: [
-        {title: 'menu.i21', href: '/resource-2-1'},
-        {title: 'menu.i22', href: '/resource-2-2'}
+        {kind: 'item', title: 'menu.i21', href: '/resource-2-1'},
+        {kind: 'item', title: 'menu.i22', href: '/resource-2-2'}
     ]
 },
 {title: 'menu.i3', href: '/resource-3'}]
