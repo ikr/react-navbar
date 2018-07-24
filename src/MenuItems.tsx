@@ -3,8 +3,10 @@ import Item, { Props as ItemProps } from './Item'
 import Dropdown, { Props as DropdownProps } from './Dropdown'
 
 export default function MenuItems(props: Props) {
+    const className = 'nav navbar-nav' + (props.secondary ? ' navbar-right' : '')
+
     return (
-        <ul className='nav navbar-nav'>
+        <ul {...{ className }}>
             {props.items.map(
                 (item, index) => (item.kind === 'dropdown') ?
                     <Dropdown {...item} key={index} /> :
@@ -15,6 +17,7 @@ export default function MenuItems(props: Props) {
 }
 
 export interface Props {
+    secondary?: boolean,
     items: MenuItem[]
 }
 

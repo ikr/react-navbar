@@ -59,5 +59,21 @@ describe('MenuItems', () => {
         it('nests a Dropdown', () => {
             assert.strictEqual(ulWrapper.find('Dropdown').length, 1)
         })
+
+        it('has no top-level CSS class navbar-right assigned', () => {
+            assert(!ulWrapper.hasClass('navbar-right'))
+        })
+    })
+})
+
+describe('secondary MenuItems', () => {
+    const ulWrapper = mount(
+        <IntlProvider locale='ru' messages={messages()}>
+            <MenuItems {...Object.assign({}, props(), { secondary: true })} />
+        </IntlProvider>
+    ).find('MenuItems').childAt(0)
+
+    it('has the top-level CSS class navbar-right assigned', () => {
+        assert(ulWrapper.hasClass('navbar-right'))
     })
 })
