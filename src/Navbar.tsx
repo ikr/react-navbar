@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { MenuItem } from './MenuItems'
+import MenuItems, { MenuItem } from './MenuItems'
 
 export default function Navbar(props: Props) {
     return (
@@ -20,8 +20,10 @@ export default function Navbar(props: Props) {
                     </button>
                 </div>
 
-                <div className="collapse navbar-collapse" id="react-navbar-collapse-all">
-
+                <div className='collapse navbar-collapse' id='react-navbar-collapse-all'>
+                    <MenuItems items={props.menuItems} />
+                    {props.secondaryMenuItems &&
+                        <MenuItems items={props.secondaryMenuItems} secondary={true} />}
                 </div>
             </div>
         </nav>
@@ -30,5 +32,5 @@ export default function Navbar(props: Props) {
 
 export interface Props {
     menuItems: MenuItem[],
-    secondaryMenuItems: MenuItem[]
+    secondaryMenuItems?: MenuItem[]
 }

@@ -72,4 +72,14 @@ describe('Navbar', () => {
             assert.strictEqual(containerWrapper.prop('id'), 'react-navbar-collapse-all')
         })
     })
+
+    it('contains the main MenuItems', () => {
+        assert.deepEqual(wrapper.find('MenuItems').at(0).prop('items'), [item(), item()])
+    })
+
+    it('contains the secondary MenuItems', () => {
+        const menuItemsWrapper = wrapper.find('MenuItems').at(1)
+        assert.deepEqual(menuItemsWrapper.prop('items'), [item()])
+        assert.strictEqual(menuItemsWrapper.prop('secondary'), true)
+    })
 })
