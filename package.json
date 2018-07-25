@@ -2,21 +2,22 @@
   "name": "react-navbar",
   "version": "1.1.1",
   "description": "React.js component rendering a translatable menu bar with Twitter Bootstrap Navbar HTML markup",
-  "main": "build/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "babel src -d build",
-    "clean": "rm build/*.js",
-    "lint": "eslint src tests",
+    "build": "tsc",
+    "lint": "tslint -c tslint.json src/*.{ts,tsx} test/*.{ts,tsx}",
     "prepublish": "npm run build",
     "pretest": "npm run lint",
-    "tdd": "mocha -w -R min -r babel-register -r tests/helpers/jsdom -t 4000 tests/*.spec.js",
-    "test": "mocha -r babel-register -r tests/helpers/jsdom -t 4000 tests/*.spec.js"
+    "tdd": "mocha -r ts-node/register -r tests/helpers/enzyme --watch-extensions ts,tsx -b -R min -w tests/*.spec.*",
+    "test": "mocha -r ts-node/register -r tests/helpers/enzyme -b tests/*.spec.*"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ikr/react-navbar.git"
   },
   "keywords": [
+    "TypeScript",
     "reactjs",
     "component",
     "react-component",
@@ -44,23 +45,21 @@
   },
   "homepage": "https://github.com/ikr/react-navbar#readme",
   "dependencies": {
-    "classnames": "^2.1.2",
-    "react-intl": "^1.2.2"
+    "react-intl": "^2.4.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.10.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-react": "^7.7.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "jsdom": "^11.7.0",
-    "mocha": "^5.0.5",
-    "raf": "^3.4.0",
-    "react": "^0.13.3"
+    "@types/enzyme": "^3.1.12",
+    "@types/mocha": "^5.2.5",
+    "@types/react": "^16.4.6",
+    "@types/react-intl": "^2.3.8",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jsdom": "^11.11.0",
+    "mocha": "^5.2.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "ts-node": "^7.0.0",
+    "tslint": "^5.11.0",
+    "typescript": "^2.9.2"
   }
 }

@@ -3,8 +3,8 @@
 # Overview
 
 React.js component rendering a translatable menu bar with Twitter Bootstrap
-[Navbar](http://getbootstrap.com/components/#navbar) HTML markup. For example, for a menu structure
-like the that:
+[Navbar](https://getbootstrap.com/docs/3.3/components/#navbar) HTML markup. For example, for a menu
+structure like the that:
 
 ```
 +-------------+--------+--------+---------------+-------------+--------+
@@ -24,71 +24,67 @@ like the that:
 
 one would have to initialize a `Navbar` component instance in the following way:
 
-```js
-import React from 'react';
-import Navbar from 'react-navbar';
+```jsx
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import {IntlProvider} from 'react-intl'
+import * as Navbar from 'react-navbar'
 
 const menuItems = [{
+    kind: 'dropdown',
     title: 'menu.dd1',
 
     items: [
-        {title: 'menu.i11', href: '/resource-1-1', target: '_blank'},
-        {title: 'menu.i12', href: '/resource-1-2'}
+        {kind: 'item', title: 'menu.i11', href: '/resource-1-1', target: '_blank'},
+        {kind: 'item', title: 'menu.i12', href: '/resource-1-2'}
     ]
 },
-{title: 'menu.i1', href: '/resource-1'},
-{title: 'menu.i2', href: '/resource-2'}];
+{kind: 'item', title: 'menu.i1', href: '/resource-1'},
+{kind: 'item', title: 'menu.i2', href: '/resource-2'}]
 
 const secondaryMenuItems = [{
+    kind: 'dropdown',
     title: 'menu.dd2',
 
     items: [
-        {title: 'menu.i21', href: '/resource-2-1'},
-        {title: 'menu.i22', href: '/resource-2-2'}
+        {kind: 'item', title: 'menu.i21', href: '/resource-2-1'},
+        {kind: 'item', title: 'menu.i22', href: '/resource-2-2'}
     ]
 },
-{title: 'menu.i3', href: '/resource-3'}];
+{title: 'menu.i3', href: '/resource-3'}]
 
 const localeSpecificIcuMessagesForTheWholeAppCompiledOnTheServer = {
-    menu: {
-        dd1: 'Drop-down-1', i11: 'Item-1-1', i12: 'Item-1-2',
-         i1: 'Item-1',       i2: 'Item-2',    i3: 'Item-3',
-        dd2: 'Drop-down-2', i21: 'Item-2-1', i22: 'Item-2-2'
-    },
+    'menu.dd1': 'Drop-down-1',
+    'menu.i11': 'Item-1-1',
+    'menu.i12': 'Item-1-2',
+    'menu.i1': 'Item-1',
+    'menu.i2': 'Item-2',
+    'menu.i3': 'Item-3',
+    'menu.dd2': 'Drop-down-2',
+    'menu.i21': 'Item-2-1',
+    'menu.i22': 'Item-2-2'
 
-    searchForm: {...},
-    footer: {...},
-    ...
-};
+    // ...
+}
 
-React.render(
-    React.createElement(Navbar, {
-        menuItems,
-        secondaryMenuItems,
-        messages: localeSpecificIcuMessagesForTheWholeAppCompiledOnTheServer
-    }),
+ReactDOM.render(
+    <IntlProvider
+    locale='en'
+    messages={localeSpecificIcuMessagesForTheWholeAppCompiledOnTheServer}>
+        <Navbar {...{menuItems, secondaryMenuItems}}/>
+    </IntlProvider>,
 
-    global.document.body
-);
+    document.getElementById('root')
+)
 ```
 
 The `secondaryMenuItems` are optional.
 
 # Internationalization
 
-Navbar is [react-intl](https://github.com/yahoo/react-intl)-based. To translate the component, make
-sure it receives the `messages` property. The i18n message paths are the values of `title`-s of
-`menuItems` and `secondaryMenuItems`.
+Navbar is [react-intl](https://github.com/yahoo/react-intl)-based. The i18n message keys are the
+values of `title`-s of `menuItems` and `secondaryMenuItems`.
 
 `react-intl` foundation allows using `react-navbar` uniformly in bigger applications, and passing
-all the namespaced translations, from the root, down the React components hierarchy, --
-automatically, with the help of `IntlMixin`.
-
-Please note, that `react-intl` depends on the global `Intl` object. You can polyfill it with
-[intl](https://github.com/andyearnshaw/Intl.js) package:
-
-```js
-if (!global.Intl) {
-    require('intl');
-}
-```
+all the translations, from the root, down the React components hierarchy, — automatically, with the
+help of the `IntlProvider`.
