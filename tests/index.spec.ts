@@ -1,9 +1,14 @@
 import * as assert from 'assert'
-import api from '../src/index'
+import * as api from '../src/index'
 import Navbar from '../src/Navbar'
+import MenuElementKind from '../src/MenuElementKind'
 
 describe('Public API', () => {
-    it('is basically the Navbar class', () => {
-        assert.strictEqual(api, Navbar)
+    it('exports Navbar as the default', () => {
+        assert.strictEqual(api.default, Navbar)
+    })
+
+    it('exports the MenuElementKind enum', () => {
+        assert.strictEqual(api.MenuElementKind, MenuElementKind)
     })
 })

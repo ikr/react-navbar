@@ -2,16 +2,17 @@ import * as assert from 'assert'
 import * as React from 'react'
 import { IntlProvider } from 'react-intl'
 import { mount } from 'enzyme'
+import MenuElementKind from '../src/MenuElementKind'
 import Dropdown, { Props } from '../src/Dropdown'
 
 function props(): Props {
     return {
-        kind: 'dropdown',
+        kind: MenuElementKind.DROPDOWN,
         title: 'leMenu.root.dd1Title',
 
         items: [
-            { kind: 'item', title: 'leMenu.root.dd1.i1', href: '/action-1' },
-            { kind: 'item', title: 'leMenu.root.dd1.i2', href: '/action-2' }
+            { kind: MenuElementKind.ITEM, title: 'leMenu.root.dd1.i1', href: '/action-1' },
+            { kind: MenuElementKind.ITEM, title: 'leMenu.root.dd1.i2', href: '/action-2' }
         ]
     }
 }

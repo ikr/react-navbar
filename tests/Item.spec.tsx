@@ -2,6 +2,7 @@ import * as assert from 'assert'
 import * as React from 'react'
 import { IntlProvider } from 'react-intl'
 import { mount } from 'enzyme'
+import MenuElementKind from '../src/MenuElementKind'
 import Item, { Props } from '../src/Item'
 
 function messages(): { [id: string]: string } {
@@ -10,7 +11,7 @@ function messages(): { [id: string]: string } {
 
 function props(): Props {
     return {
-        kind: 'item',
+        kind: MenuElementKind.ITEM,
         title: 'menu.nunu',
         href: '#/actions/nunu',
         target: '_target'

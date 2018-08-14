@@ -28,27 +28,29 @@ one would have to initialize a `Navbar` component instance in the following way:
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import {IntlProvider} from 'react-intl'
-import * as Navbar from 'react-navbar'
+import {default as Navbar, MenuElementKind} from 'react-navbar'
+
+const {ITEM, DROPDOWN} = MenuElementKind
 
 const menuItems = [{
-    kind: 'dropdown',
+    kind: DROPDOWN,
     title: 'menu.dd1',
 
     items: [
-        {kind: 'item', title: 'menu.i11', href: '/resource-1-1', target: '_blank'},
-        {kind: 'item', title: 'menu.i12', href: '/resource-1-2'}
+        {kind: ITEM, title: 'menu.i11', href: '/resource-1-1', target: '_blank'},
+        {kind: ITEM, title: 'menu.i12', href: '/resource-1-2'}
     ]
 },
-{kind: 'item', title: 'menu.i1', href: '/resource-1'},
-{kind: 'item', title: 'menu.i2', href: '/resource-2'}]
+{kind: ITEM, title: 'menu.i1', href: '/resource-1'},
+{kind: ITEM, title: 'menu.i2', href: '/resource-2'}]
 
 const secondaryMenuItems = [{
-    kind: 'dropdown',
+    kind: DROPDOWN,
     title: 'menu.dd2',
 
     items: [
-        {kind: 'item', title: 'menu.i21', href: '/resource-2-1'},
-        {kind: 'item', title: 'menu.i22', href: '/resource-2-2'}
+        {kind: ITEM, title: 'menu.i21', href: '/resource-2-1'},
+        {kind: ITEM, title: 'menu.i22', href: '/resource-2-2'}
     ]
 },
 {title: 'menu.i3', href: '/resource-3'}]
