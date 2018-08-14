@@ -1,6 +1,6 @@
 {
   "name": "react-navbar",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "React.js component rendering a translatable menu bar with Twitter Bootstrap Navbar HTML markup",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
