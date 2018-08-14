@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { FormattedMessage } from 'react-intl'
+import MenuElementKind from './MenuElementKind'
 
 export default function Item(props: Props) {
     const { href, target, title } = props
@@ -14,7 +15,7 @@ export default function Item(props: Props) {
 }
 
 export interface Props {
-    kind: 'item',
+    kind: MenuElementKind.ITEM,
     href: string,
     target?: string,
     title: string

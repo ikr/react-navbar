@@ -1,4 +1,5 @@
 import * as React from 'react'
+import MenuElementKind from './MenuElementKind'
 import Item, { Props as ItemProps } from './Item'
 import Dropdown, { Props as DropdownProps } from './Dropdown'
 
@@ -8,7 +9,7 @@ export default function MenuItems(props: Props) {
     return (
         <ul {...{ className }}>
             {props.items.map(
-                (item, index) => (item.kind === 'dropdown') ?
+                (item, index) => (item.kind === MenuElementKind.DROPDOWN) ?
                     <Dropdown {...item} key={index} /> :
                     <Item {...item} key={index} />
             )}

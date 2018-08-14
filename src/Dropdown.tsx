@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { FormattedMessage } from 'react-intl'
+import MenuElementKind from './MenuElementKind'
 import Item, { Props as ItemProps } from './Item'
 
 export default function Dropdown(props: Props) {
@@ -25,7 +26,7 @@ export default function Dropdown(props: Props) {
 }
 
 export interface Props {
-    kind: 'dropdown',
+    kind: MenuElementKind.DROPDOWN,
     title: string,
     items: ItemProps[]
 }

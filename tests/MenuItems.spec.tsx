@@ -2,19 +2,20 @@ import * as assert from 'assert'
 import * as React from 'react'
 import { IntlProvider } from 'react-intl'
 import { mount } from 'enzyme'
+import MenuElementKind from '../src/MenuElementKind'
 import MenuItems, { Props } from '../src/MenuItems'
 
 function props(): Props {
     return {
         items: [
-            { kind: 'item', title: 'reboot', href: '/do?ac=reboot' },
-            { kind: 'item', title: 'sleep', href: '/do?ac=sleep' },
+            { kind: MenuElementKind.ITEM, title: 'reboot', href: '/do?ac=reboot' },
+            { kind: MenuElementKind.ITEM, title: 'sleep', href: '/do?ac=sleep' },
 
             {
-                kind: 'dropdown',
+                kind: MenuElementKind.DROPDOWN,
                 title: 'more',
                 items: [
-                    { kind: 'item', title: 'shutDown', href: '/do?ac=shutDown' }
+                    { kind: MenuElementKind.ITEM, title: 'shutDown', href: '/do?ac=shutDown' }
                 ]
             }
         ]
